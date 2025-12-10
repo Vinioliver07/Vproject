@@ -234,7 +234,7 @@ const App: React.FC = () => {
                      <p className="text-gray-400 text-sm">Prefere uma conversa rápida? Chame nos canais oficiais.</p>
                      
                      <a 
-                      href="https://wa.me/5511999999999" 
+                      href="https://wa.me/5537996704294" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       onClick={trackWhatsAppClick}
@@ -250,7 +250,7 @@ const App: React.FC = () => {
                     </a>
 
                     <a 
-                      href="mailto:contato@vproject.com" 
+                      href="mailto:contatovproject@gmail.com" 
                       className="flex items-center p-4 bg-gray-900/50 rounded-xl hover:bg-gray-900 transition-colors border border-gray-800"
                     >
                       <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 text-blue-500">
@@ -258,7 +258,7 @@ const App: React.FC = () => {
                       </div>
                       <div>
                         <p className="font-bold">Email Corporativo</p>
-                        <p className="text-xs text-gray-500">contato@vproject.com</p>
+                        <p className="text-xs text-gray-500">contatovproject@gmail.com</p>
                       </div>
                     </a>
                   </div>
@@ -306,8 +306,8 @@ const App: React.FC = () => {
             <div>
               <h4 className="font-bold mb-6">Contato</h4>
               <ul className="space-y-4 text-gray-400">
-                <li>contato@vproject.com</li>
-                <li>+55 (11) 99999-9999</li>
+                <li>contatovproject@gmail.com</li>
+                <li>+55 (37) 99670-4294</li>
                 <li>São Paulo, SP</li>
               </ul>
             </div>
