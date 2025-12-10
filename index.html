@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- GOOGLE TAG MANAGER (Head) -->
+    <!-- TODO: Substitua 'GTM-XXXXXXX' pelo seu ID real do Google Tag Manager -->
+    <!-- Descomente o bloco abaixo após configurar o ID -->
+    <!--
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    -->
+    <!-- End Google Tag Manager -->
+
+    <!-- SECURITY: Content Security Policy -->
+    <!-- Restricts resources to trusted sources only (XSS Mitigation) -->
+    <!-- Added googletagmanager.com to script-src and img-src for Analytics -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self'; 
+      script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://aistudiocdn.com https://www.googletagmanager.com; 
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+      font-src 'self' https://fonts.gstatic.com; 
+      img-src 'self' data: https: https://www.googletagmanager.com; 
+      connect-src 'self' https://generativelanguage.googleapis.com https://www.google-analytics.com;
+      object-src 'none';
+      base-uri 'self';
+    ">
+
+    <!-- Performance Optimization: Preconnect to Font Origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- SEO Meta Tags -->
+    <title>Home | V Project - Web Solutions</title>
+    <meta name="description" content="V Project é um estúdio de desenvolvimento web especializado em performance, sites High-Ticket e cartões de visita digitais. Transformamos sua presença digital." />
+    <meta name="keywords" content="desenvolvimento web, sites high-ticket, performance web, cartão de visita digital, SEO, react, v project" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="V Project" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vproject.com/" />
+    <meta property="og:title" content="V Project - Web Solutions" />
+    <meta property="og:description" content="Estúdio de desenvolvimento web focado em performance e clientes High-Ticket." />
+    <meta property="og:image" content="https://vproject.com/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vproject.com/" />
+    <meta property="twitter:title" content="V Project - Web Solutions" />
+    <meta property="twitter:description" content="Estúdio de desenvolvimento web focado em performance e clientes High-Ticket." />
+
+    <!-- Schema Markup (JSON-LD) for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://vproject.com/#organization",
+          "name": "V Project",
+          "url": "https://vproject.com",
+          "logo": "https://vproject.com/logo.png",
+          "image": "https://vproject.com/cover.jpg",
+          "description": "Estúdio de desenvolvimento web focado em performance e clientes High-Ticket.",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+          },
+          "telePhone": "+5511999999999",
+          "sameAs": [
+            "https://instagram.com/vproject",
+            "https://facebook.com/vproject",
+            "https://linkedin.com/company/vproject"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Desenvolvimento Web",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Desenvolvimento de Sites High-Ticket",
+                  "description": "Sites institucionais e landing pages de alta conversão e design exclusivo."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Otimização de Performance Web (Core Web Vitals)",
+                  "description": "Melhoria de velocidade de carregamento e SEO Técnico."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cartões de Visita Digitais",
+                  "description": "Links na bio modernos e interativos para profissionais."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                light: '#00AEEF', // Light blue from logo
+                dark: '#1B3B6F',  // Dark blue from logo
+                gray: '#F3F4F6',
+                accent: '#0EA5E9'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f172a;
+        color: #fff;
+        scroll-behavior: smooth;
+        /* Prevent CLS on font load */
+        text-rendering: optimizeLegibility;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <!-- GOOGLE TAG MANAGER (Body) -->
+    <!-- TODO: Substitua 'GTM-XXXXXXX' pelo seu ID real do Google Tag Manager -->
+    <!-- Descomente o bloco abaixo após configurar o ID -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+    <!-- End Google Tag Manager -->
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
