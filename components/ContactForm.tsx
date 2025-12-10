@@ -18,7 +18,7 @@ export const ContactForm: React.FC = () => {
   });
   
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormState, string>>>({});
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -56,15 +56,13 @@ export const ContactForm: React.FC = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('idle');
 
     // 1. Anti-Spam Honeypot Check
-    // If the hidden field has any value, it's likely a bot filling out all inputs.
     if (formData.company_role_verification) {
       console.warn("Spam attempt blocked by Honeypot");
-      // Fake success to confuse the bot
       setStatus('success'); 
       return;
     }
@@ -74,22 +72,48 @@ export const ContactForm: React.FC = () => {
       return;
     }
 
-    // If valid, proceed with submission (Simulated)
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      
-      // ANALYTICS: Push Data Layer Event
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'lead_gerado',
-          formName: 'Contact Form',
-          leadLocation: 'Home Page'
-        });
-      }
+    // 3. Send to Web3Forms API
+    setStatus('loading');
 
-      setFormData({ name: '', email: '', message: '', company_role_verification: '' });
-    }, 1000);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_KEY_HERE', // TODO: Substituir pela chave real
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: 'Nova mensagem do V Project Portfolio',
+          from_name: 'V Project Website'
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        
+        // ANALYTICS: Push Data Layer Event
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'lead_gerado',
+            formName: 'Contact Form',
+            leadLocation: 'Home Page'
+          });
+        }
+
+        setFormData({ name: '', email: '', message: '', company_role_verification: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+    }
   };
 
   if (status === 'success') {
@@ -101,6 +125,19 @@ export const ContactForm: React.FC = () => {
         <h3 className="text-2xl font-bold text-white mb-2">Mensagem Recebida!</h3>
         <p className="text-gray-300 mb-6">Nossa equipe entrará em contato em breve.</p>
         <Button onClick={() => setStatus('idle')} variant="outline">Enviar outra mensagem</Button>
+      </div>
+    );
+  }
+
+  if (status === 'error') {
+    return (
+      <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-8 text-center animate-fade-in">
+        <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <AlertCircle className="text-red-400" size={32} />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-2">Erro ao Enviar</h3>
+        <p className="text-gray-300 mb-6">Tente novamente ou entre em contato pelo WhatsApp.</p>
+        <Button onClick={() => setStatus('idle')} variant="outline">Tentar Novamente</Button>
       </div>
     );
   }
@@ -161,8 +198,8 @@ export const ContactForm: React.FC = () => {
         {errors.message && <span className="text-red-400 text-xs mt-1 flex items-center"><AlertCircle size={12} className="mr-1"/> {errors.message}</span>}
       </div>
 
-      <Button type="submit" fullWidth className="flex items-center justify-center py-4">
-        Enviar Mensagem Segura <Send size={18} className="ml-2" />
+      <Button type="submit" fullWidth className="flex items-center justify-center py-4" disabled={status === 'loading'}>
+        {status === 'loading' ? 'Enviando...' : 'Enviar Mensagem Segura'} <Send size={18} className="ml-2" />
       </Button>
     </form>
   );
