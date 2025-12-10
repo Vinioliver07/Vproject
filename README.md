@@ -178,8 +178,8 @@ Este projeto é de propriedade de **V Project**. Todos os direitos reservados.
 **V Project**  
 Estúdio de desenvolvimento web focado em performance e design
 
-- 📧 Email: contato@vproject.com
-- 📱 WhatsApp: +55 (11) 99999-9999
+- 📧 Email: contatovproject@gmail.com
+- 📱 WhatsApp: +55 (37) 99670-4294
 - 📍 São Paulo, SP
 
 ---

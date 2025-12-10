@@ -64,7 +64,7 @@ export const ConsultationForm: React.FC = () => {
                  Nova Consulta
                </Button>
                <a 
-                 href={`https://wa.me/5511999999999?text=Olá, fiz uma consulta na IA sobre: ${encodeURIComponent(idea)}`}
+                 href={`https://wa.me/5537996704294?text=Olá, fiz uma consulta na IA sobre: ${encodeURIComponent(idea)}`}
                  target="_blank"
                  rel="noreferrer"
                  className="block w-full"
