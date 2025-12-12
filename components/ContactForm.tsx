@@ -83,7 +83,7 @@ export const ContactForm: React.FC = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '625a55d8-2516-49ab-b44f-65a621da5392',
+          access_key: '625a55d8-2516-49ab-b44f-65a621da5392', // TODO: Substituir pela chave real
           name: formData.name,
           email: formData.email,
           message: formData.message,
