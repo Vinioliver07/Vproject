@@ -265,19 +265,11 @@ const App: React.FC = () => {
                   {/* Photo Container */}
                   <div className="relative glass-card p-2 rounded-3xl">
                     <div className="relative rounded-2xl overflow-hidden aspect-square">
-                      {/* TODO: Adicione sua foto aqui */}
-                      {/* <img src="/profile.jpg" alt="Desenvolvedor V Project" className="w-full h-full object-cover" /> */}
-                      
-                      {/* Placeholder enquanto não adiciona foto */}
-                      <div className="w-full h-full bg-gradient-to-br from-brand-light/10 to-brand-dark/20 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-brand-light/20 flex items-center justify-center">
-                            <Code size={64} className="text-brand-light" />
-                          </div>
-                          <p className="text-gray-400 text-sm">Sua foto aqui</p>
-                          <p className="text-gray-500 text-xs mt-1">public/profile.jpg</p>
-                        </div>
-                      </div>
+                      <img 
+                        src="/profile.jpg" 
+                        alt="CEO V Project - Desenvolvedor Web" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
 
