@@ -1,0 +1,15 @@
+# robots.txt - V Project
+# https://vproject-sable.vercel.app/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin/config folders if any
+Disallow: /api/
+Disallow: /.env
+
+# Sitemap location
+Sitemap: https://vproject-sable.vercel.app/sitemap.xml
+
+# Crawl-delay for bots (optional, prevents aggressive crawling)
+Crawl-delay: 1
