@@ -13,6 +13,7 @@ const projects: Project[] = [
     category: 'Cartão de Visita Digital',
     description: 'Solução elegante para profissionais da saúde, centralizando agendamentos e redes sociais.',
     url: 'https://dr-lauane-cartao-visita.netlify.app/',
+    image: '/projects/dr-lauane.jpg', // Adicione a screenshot aqui
     imageColor: 'bg-gradient-to-br from-pink-400 to-rose-600',
     features: ['Design Clean', 'Botão WhatsApp', 'Links Sociais']
   },
@@ -21,9 +22,20 @@ const projects: Project[] = [
     title: 'Mateus Silva',
     category: 'Portfólio Pessoal',
     description: 'Cartão interativo moderno para apresentação profissional e links rápidos.',
-    url: 'https://mateussilvacartaov.netlify.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn_F9kLxGv5XwnBPTPDGxDt2vc_4uMiLOcsW44nvxX85w92tO2OuPwtZJAhgE_aem_xkSazaA5wxZdiXGjXGHUCA',
+    url: 'https://mateussilvacartaov.netlify.app/',
+    image: '/projects/mateus-silva.jpg', // Adicione a screenshot aqui
     imageColor: 'bg-gradient-to-br from-blue-600 to-slate-900',
     features: ['Perfil Profissional', 'Links Rápidos', 'Design Responsivo']
+  },
+  {
+    id: '3',
+    title: 'CorteVip',
+    category: 'Site para Barbearia',
+    description: 'Plataforma de agendamento online moderna para barbearias, com sistema de horários e serviços.',
+    url: '#', // Adicione a URL real do projeto
+    image: '/projects/cortevip.jpg', // Adicione a screenshot aqui
+    imageColor: 'bg-gradient-to-br from-yellow-500 to-amber-700',
+    features: ['Agendamento Online', 'Catálogo de Serviços', 'Design Moderno']
   }
 ];
 

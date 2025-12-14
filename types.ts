@@ -4,6 +4,7 @@ export interface Project {
   category: string;
   description: string;
   url: string;
+  image?: string; // URL da imagem/screenshot do projeto
   imageColor: string; // Used for placeholder gradient
   features: string[];
 }
