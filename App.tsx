@@ -13,7 +13,7 @@ const projects: Project[] = [
     category: 'Cartão de Visita Digital',
     description: 'Solução elegante para profissionais da saúde, centralizando agendamentos e redes sociais.',
     url: 'https://dr-lauane-cartao-visita.netlify.app/',
-    image: '/projects/dr-lauane.jpg', // Adicione a screenshot aqui
+    image: '/dr-lauane-cartao.png',
     imageColor: 'bg-gradient-to-br from-pink-400 to-rose-600',
     features: ['Design Clean', 'Botão WhatsApp', 'Links Sociais']
   },
@@ -23,7 +23,7 @@ const projects: Project[] = [
     category: 'Portfólio Pessoal',
     description: 'Cartão interativo moderno para apresentação profissional e links rápidos.',
     url: 'https://mateussilvacartaov.netlify.app/',
-    image: '/projects/mateus-silva.jpg', // Adicione a screenshot aqui
+    image: '/mateus-silva-cartaov.png',
     imageColor: 'bg-gradient-to-br from-blue-600 to-slate-900',
     features: ['Perfil Profissional', 'Links Rápidos', 'Design Responsivo']
   },
@@ -33,7 +33,7 @@ const projects: Project[] = [
     category: 'Site para Barbearia',
     description: 'Plataforma de agendamento online moderna para barbearias, com sistema de horários e serviços.',
     url: '#', // Adicione a URL real do projeto
-    image: '/projects/cortevip.jpg', // Adicione a screenshot aqui
+    image: '/barbearia-corte-vip.png',
     imageColor: 'bg-gradient-to-br from-yellow-500 to-amber-700',
     features: ['Agendamento Online', 'Catálogo de Serviços', 'Design Moderno']
   }
@@ -301,10 +301,6 @@ const App: React.FC = () => {
                 <div className="glass-card p-4 rounded-xl text-center">
                   <p className="text-2xl md:text-3xl font-bold text-blue-400">5+</p>
                   <p className="text-xs text-gray-400 mt-1">Anos</p>
-                </div>
-              </div>
-            </div>
-                  </div>
                 </div>
               </div>
             </div>
