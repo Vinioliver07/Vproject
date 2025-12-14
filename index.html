@@ -126,7 +126,10 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Preload critical font -->
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v11/QGYvz_MVcBeNP4NjuGObqx1XmO1I4W61O4a0Ew.woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet"></noscript>
     <script>
       tailwind.config = {
         theme: {
@@ -136,8 +139,8 @@
             },
             colors: {
               brand: {
-                light: '#00AEEF', // Light blue from logo
-                dark: '#1B3B6F',  // Dark blue from logo
+                light: '#00AEEF',
+                dark: '#1B3B6F',
                 gray: '#F3F4F6',
                 accent: '#0EA5E9'
               }
@@ -151,7 +154,6 @@
         background-color: #0f172a;
         color: #fff;
         scroll-behavior: smooth;
-        /* Prevent CLS on font load */
         text-rendering: optimizeLegibility;
       }
       .glass-card {
@@ -170,7 +172,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <!-- GOOGLE TAG MANAGER (Body) -->

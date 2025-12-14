@@ -19,18 +19,30 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {/* If image exists, show it */}
           {project.image ? (
             <div className="w-full h-full relative">
-              <img 
-                src={project.image} 
-                alt={`Preview ${project.title}`}
-                className="w-full h-full object-cover object-top"
-                onError={(e) => {
-                  // Fallback to gradient if image fails to load
-                  e.currentTarget.style.display = 'none';
-                  if (e.currentTarget.parentElement) {
-                    e.currentTarget.parentElement.className = `w-full h-full ${project.imageColor} flex items-center justify-center`;
-                  }
-                }}
-              />
+              <picture>
+                <source 
+                  media="(max-width: 768px)" 
+                  srcSet={`${project.image.replace('.png', '-mobile.webp')}`}
+                  type="image/webp"
+                />
+                <source 
+                  srcSet={`${project.image.replace('.png', '.webp')}`}
+                  type="image/webp"
+                />
+                <img 
+                  src={project.image} 
+                  alt={`Preview ${project.title}`}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  onError={(e) => {
+                    // Fallback to gradient if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    if (e.currentTarget.parentElement) {
+                      e.currentTarget.parentElement.className = `w-full h-full ${project.imageColor} flex items-center justify-center`;
+                    }
+                  }}
+                />
+              </picture>
               {/* Overlay with action button */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                 <a 
