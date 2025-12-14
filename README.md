@@ -27,6 +27,30 @@
 - ✅ **Analytics Ready** - Google Tag Manager preparado, dataLayer configurado
 - ✅ **TypeScript** - Código totalmente tipado
 - ✅ **Acessibilidade** - WCAG básica, navegação por teclado
+- ✅ **Imagens Otimizadas** - WebP com fallback, lazy loading, srcset responsivo
+
+---
+
+## ⚡ Otimizações de Performance
+
+### 🖼️ Imagens
+- **Formato WebP** - Conversão de PNG para WebP (economia de ~3.9MB)
+- **Imagens Responsivas** - srcset com versões mobile e desktop
+- **Lazy Loading** - Carregamento sob demanda
+- **Fallback PNG** - Suporte para navegadores antigos
+
+### 🎨 CSS & JavaScript
+- **Font Preload** - Preload da fonte crítica Outfit
+- **Async Font Loading** - Carregamento não-bloqueante com media print
+- **Code Splitting** - React vendor e Lucide separados
+- **Minificação Terser** - Remoção de console.log em produção
+
+### 📊 Resultados Esperados
+- **LCP (Largest Contentful Paint)**: < 2.5s
+- **FID (First Input Delay)**: < 100ms  
+- **CLS (Cumulative Layout Shift)**: < 0.1
+- **Lighthouse Performance**: 90-100
+- **Bundle Size**: ~206KB (gzipped: ~64KB)
 
 ---
 
@@ -164,6 +188,28 @@ O site apresenta projetos reais desenvolvidos:
 
 1. **Dr. Lauane** - Cartão de visita digital para profissionais da saúde
 2. **Mateus Silva** - Portfólio pessoal interativo
+3. **CorteVip** - Site completo para barbearia com agendamento online
+
+### 📸 Screenshots dos Projetos
+- Imagens originais em PNG: `public/*.png`
+- Versões otimizadas WebP: `public/*.webp`
+- Versões mobile: `public/*-mobile.webp`
+
+---
+
+## 🔧 Scripts de Otimização
+
+### Otimizar Imagens
+
+```bash
+# Converter imagens para WebP e gerar versões mobile
+node optimize-images.js
+```
+
+Este script irá:
+- Converter PNG para WebP (qualidade 85%)
+- Gerar versões mobile com 400px de largura
+- Economizar ~70-90% do tamanho original
 
 ---
 
