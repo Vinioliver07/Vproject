@@ -3,7 +3,7 @@ import { readdir } from 'fs/promises';
 import path from 'path';
 
 const publicDir = './public';
-const imageFiles = ['dr-lauane-cartao.png', 'mateus-silva-cartaov.png', 'barbearia-corte-vip.png'];
+const imageFiles = ['dr-lauane-cartao.png', 'mateus-silva-cartaov.png', 'barbearia-corte-vip.png', 'panela-mineira.png'];
 
 async function optimizeImages() {
   console.log('🖼️  Otimizando imagens...\n');
@@ -20,11 +20,11 @@ async function optimizeImages() {
       
       console.log(`✅ ${file} → ${file.replace('.png', '.webp')}`);
       
-      // Criar versão mobile (width: 400px)
+      // Criar versão mobile (width: 800px para telas retina)
       const mobilePath = path.join(publicDir, file.replace('.png', '-mobile.webp'));
       await sharp(inputPath)
-        .resize({ width: 400 })
-        .webp({ quality: 80, effort: 6 })
+        .resize({ width: 800 })
+        .webp({ quality: 85, effort: 6 })
         .toFile(mobilePath);
       
       console.log(`📱 ${file} → ${file.replace('.png', '-mobile.webp')}`);

@@ -42,7 +42,8 @@ const projects: Project[] = [
     title: 'Panela Mineira',
     category: 'Bio-Link Restaurante',
     description: 'Bio-link personalizado para restaurante de comida mineira, centralizando cardápio, delivery e redes sociais.',
-    url: '#', // Adicione a URL real quando estiver pronto
+    url: 'https://panela-mineira.vercel.app/',
+    image: '/panela-mineira.png',
     imageColor: 'bg-gradient-to-br from-green-600 to-yellow-600',
     features: ['Cardápio Digital', 'Links de Delivery', 'Integração WhatsApp']
   }
