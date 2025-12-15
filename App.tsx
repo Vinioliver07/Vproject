@@ -4,7 +4,7 @@ import { Button } from './components/Button';
 import { ContactForm } from './components/ContactForm';
 import { ProjectCard } from './components/ProjectCard';
 import { Project } from './types';
-import { Menu, X, ChevronDown, Instagram, Facebook, Globe, Code, Layers, Zap, Mail, MessageCircle } from 'lucide-react';
+import { Menu, X, ChevronDown, Instagram, Facebook, Globe, Code, Layers, Zap, Mail, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects: Project[] = [
   {
@@ -52,6 +52,7 @@ const projects: Project[] = [
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentProject, setCurrentProject] = useState(0);
 
   // SEO: Dynamic Title Logic
   useEffect(() => {
@@ -323,10 +324,69 @@ const App: React.FC = () => {
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-12 md:gap-20">
-            {projects.map(project => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+          {/* Carrossel de Projetos */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Navegação - Desktop */}
+            <div className="hidden md:block">
+              <button
+                onClick={() => setCurrentProject((prev) => (prev === 0 ? projects.length - 1 : prev - 1))}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-20 w-12 h-12 rounded-full bg-brand-light/20 hover:bg-brand-light/30 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-all hover:scale-110"
+                aria-label="Projeto anterior"
+              >
+                <ChevronLeft size={24} className="text-white" />
+              </button>
+              <button
+                onClick={() => setCurrentProject((prev) => (prev === projects.length - 1 ? 0 : prev + 1))}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-20 w-12 h-12 rounded-full bg-brand-light/20 hover:bg-brand-light/30 backdrop-blur-sm border border-white/10 flex items-center justify-center transition-all hover:scale-110"
+                aria-label="Próximo projeto"
+              >
+                <ChevronRight size={24} className="text-white" />
+              </button>
+            </div>
+
+            {/* Projeto Atual */}
+            <div className="flex justify-center items-center min-h-[600px]">
+              <div className="w-full transition-all duration-500 ease-in-out">
+                <ProjectCard project={projects[currentProject]} />
+              </div>
+            </div>
+
+            {/* Indicadores + Navegação Mobile */}
+            <div className="mt-8 flex flex-col items-center gap-4">
+              {/* Indicadores */}
+              <div className="flex gap-2">
+                {projects.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentProject(idx)}
+                    className={`h-2 rounded-full transition-all ${
+                      idx === currentProject 
+                        ? 'w-8 bg-brand-light' 
+                        : 'w-2 bg-white/20 hover:bg-white/40'
+                    }`}
+                    aria-label={`Ir para projeto ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Navegação Mobile */}
+              <div className="flex md:hidden gap-4">
+                <button
+                  onClick={() => setCurrentProject((prev) => (prev === 0 ? projects.length - 1 : prev - 1))}
+                  className="w-10 h-10 rounded-full bg-brand-light/20 backdrop-blur-sm border border-white/10 flex items-center justify-center"
+                  aria-label="Projeto anterior"
+                >
+                  <ChevronLeft size={20} className="text-white" />
+                </button>
+                <button
+                  onClick={() => setCurrentProject((prev) => (prev === projects.length - 1 ? 0 : prev + 1))}
+                  className="w-10 h-10 rounded-full bg-brand-light/20 backdrop-blur-sm border border-white/10 flex items-center justify-center"
+                  aria-label="Próximo projeto"
+                >
+                  <ChevronRight size={20} className="text-white" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
