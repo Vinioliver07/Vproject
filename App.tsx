@@ -293,7 +293,7 @@ const App: React.FC = () => {
               {/* Stats - Mobile e Desktop */}
               <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
                 <div className="glass-card p-4 rounded-xl text-center">
-                  <p className="text-2xl md:text-3xl font-bold text-brand-light">50+</p>
+                  <p className="text-2xl md:text-3xl font-bold text-brand-light">15+</p>
                   <p className="text-xs text-gray-400 mt-1">Projetos</p>
                 </div>
                 <div className="glass-card p-4 rounded-xl text-center">
@@ -301,7 +301,7 @@ const App: React.FC = () => {
                   <p className="text-xs text-gray-400 mt-1">Satisfação</p>
                 </div>
                 <div className="glass-card p-4 rounded-xl text-center">
-                  <p className="text-2xl md:text-3xl font-bold text-blue-400">5+</p>
+                  <p className="text-2xl md:text-3xl font-bold text-blue-400">3+</p>
                   <p className="text-xs text-gray-400 mt-1">Anos</p>
                 </div>
               </div>
