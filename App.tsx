@@ -36,6 +36,15 @@ const projects: Project[] = [
     image: '/barbearia-corte-vip.png',
     imageColor: 'bg-gradient-to-br from-yellow-500 to-amber-700',
     features: ['Agendamento Online', 'Catálogo de Serviços', 'Design Moderno']
+  },
+  {
+    id: '4',
+    title: 'Panela Mineira',
+    category: 'Bio-Link Restaurante',
+    description: 'Bio-link personalizado para restaurante de comida mineira, centralizando cardápio, delivery e redes sociais.',
+    url: '#', // Adicione a URL real quando estiver pronto
+    imageColor: 'bg-gradient-to-br from-green-600 to-yellow-600',
+    features: ['Cardápio Digital', 'Links de Delivery', 'Integração WhatsApp']
   }
 ];
 
