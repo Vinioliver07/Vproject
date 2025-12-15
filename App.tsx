@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: 'CorteVip',
     category: 'Site para Barbearia',
     description: 'Plataforma de agendamento online moderna para barbearias, com sistema de horários e serviços.',
-    url: '#', // Adicione a URL real do projeto
+    url: 'https://barbearia-corte0vip.vercel.app/',
     image: '/barbearia-corte-vip.png',
     imageColor: 'bg-gradient-to-br from-yellow-500 to-amber-700',
     features: ['Agendamento Online', 'Catálogo de Serviços', 'Design Moderno']
